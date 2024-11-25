@@ -14,12 +14,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14 md:gap-4">
           {/* first section */}
           <div className="space-y-4 max-w-[300px]">
-            <h1 className="text-2xl font-bold">The Coding Journey</h1>
+            <h1 className="text-2xl font-bold">NNIIT</h1>
             <p className="text-dark2">
-              TCJ is a platform dedicated to empowering aspiring developers.
-              From beginner tutorials to advanced programming concepts, we
-              provide a comprehensive learning experience designed to help you
-              master coding skills, build projects, and launch your tech career.
+            A key feature to engage yourself and bring the best out you is our priority. 
+            The conception that sustain the learning techniques to contribute to the students learning on the active and creative appropriation of a new knowledge through a constant self- improvement of the autonomy and self- determination with the ability to understand the theatrical and methodological foundations.
             </p>
           </div>
           {/* second section */}
@@ -29,16 +27,16 @@ const Footer = () => {
               <div className="text-dark2">
                 <ul className="space-y-2 text-lg">
                   <li className="cursor-pointer hover:text-secondary duration-200">
-                    Web Development
+                    Class 6-10
                   </li>
                   <li className="cursor-pointer hover:text-secondary duration-200">
-                    Software Development
+                    Class 11
                   </li>
                   <li className="cursor-pointer hover:text-secondary duration-200">
-                    Apps Development
+                    Class 12
                   </li>
                   <li className="cursor-pointer hover:text-secondary duration-200">
-                    E-learning
+                    JEE/NEET
                   </li>
                 </ul>
               </div>
