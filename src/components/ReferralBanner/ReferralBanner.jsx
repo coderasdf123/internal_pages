@@ -3,12 +3,12 @@ import React from 'react';
 const ReferralBanner = () => {
   return (
     <div className="relative w-full min-w-full bg-gradient-to-r from-blue-50 via-purple-50 to-blue-50">
-      <div className="relative w-full px-4 py-6 md:py-8 mx-auto overflow-hidden">
+      <div className="relative w-full px-12 md:px-22 py-6 md:py-8 mx-auto overflow-hidden pl-[78px]">
         {/* Content Container */}
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Text Content */}
           <div className="flex-1 max-w-2xl space-y-4 z-10">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 leading-tight">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-800 leading-tight">
               Refer friends to win Amazon vouchers and Plus Subscription
             </h2>
             <p className="text-gray-600 text-base md:text-lg">
@@ -20,72 +20,98 @@ const ReferralBanner = () => {
           </div>
 
           {/* Gift Card Illustration */}
-          <div className="relative hidden md:block flex-shrink-0 ml-8">
+          <div className="relative hidden md:block flex-shrink-0 ml-8"
+          style={{
+            transform: "translateX(-3.75cm)", // Move left by 3 centimeters
+          }}
+          >
+
             <svg
-              className="w-72 h-72"
-              viewBox="0 0 200 200"
+              className="w-72 h-72 md:h-80 lg:h-96"
+              viewBox="0 0 400 300"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              {/* Background Card */}
+              {/* Gift Card Background */}
               <rect
-                x="20"
-                y="40"
-                width="160"
-                height="120"
+                x="50"
+                y="70"
+                width="300"
+                height="160"
                 rx="10"
-                fill="white"
+                fill="rgba(139, 115, 85, 0.65)" /* More transparent and less pigmented brown */
+              stroke="rgba(255, 225, 50, 0.6)" 
+                strokeWidth="4"
                 filter="drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1))"
               />
-              
+
               {/* Ribbon */}
-              <path
-                d="M90 40 L110 40 L100 60 Z"
-                fill="#4F46E5"
-              />
-              
+              <path d="M120 70 L280 70 L200 100 Z" fill="rgba(255, 215, 0, 0.8)" />
+
               {/* Rupee Symbol */}
               <text
-                x="100"
-                y="110"
-                fontSize="40"
+                x="200"
+                y="150"
+                fontSize="48"
                 fontWeight="bold"
-                fill="#4F46E5"
+                fill="rgba(255, 215, 0, 0.8)"
                 textAnchor="middle"
               >
                 ₹
               </text>
-              
+
+              {/* Decorative Elements */}
+              <g transform="translate(160, 120)">
+                <rect
+                  x="-4"
+                  y="30"
+                  width="80"
+                  height="40"
+                  rx="8"
+                  fill="rgba(255, 215, 0, 0.8)"
+                />
+                <text
+                  x="38"
+                  y="55"
+                  fontSize="16"
+                  fontWeight="bold"
+                  fill="rgba(75, 63, 47, 0.8)"
+                  textAnchor="middle"
+                >
+                  Gift Card
+                </text>
+              </g>
+
               {/* Plus Icon */}
-              <g transform="translate(140, 60)">
-                <circle cx="0" cy="0" r="15" fill="#4F46E5" />
+              <g transform="translate(320, 100)">
+                <circle cx="0" cy="0" r="20" fill="rgba(255, 215, 0, 0.8)" />
                 <path
-                  d="M-8 0 H8 M0 -8 V8"
-                  stroke="white"
-                  strokeWidth="2"
+                  d="M-10 0 H10 M0 -10 V10"
+                  stroke="#fff"
+                  strokeWidth="3"
                 />
               </g>
-              
+
               {/* Decorative Stars */}
               {[...Array(5)].map((_, i) => (
-                <g key={i} transform={`translate(${30 + i * 35}, ${30 + (i % 2) * 20})`}>
+                <g key={i} transform={`translate(${70 + i * 50}, ${80 + (i % 2) * 30})`}>
                   <path
-                    d="M0 -5 L1.5 -1.5 L5 -1.5 L2.5 1.5 L3.5 5 L0 2.5 L-3.5 5 L-2.5 1.5 L-5 -1.5 L-1.5 -1.5 Z"
-                    fill="#FFD700"
+                    d="M0 -7 L2 -2 L7 -2 L3 2 L5 7 L0 3 L-5 7 L-3 2 L-7 -2 L-2 -2 Z"
+                    fill="rgba(255, 215, 0, 0.8)"
                     className="animate-pulse"
                     style={{ animationDelay: `${i * 200}ms` }}
                   />
                 </g>
               ))}
-              
+
               {/* Sparkles */}
               {[...Array(8)].map((_, i) => (
                 <circle
                   key={`sparkle-${i}`}
-                  cx={40 + i * 20}
-                  cy={140 - (i % 2) * 20}
-                  r="2"
-                  fill="#FFD700"
+                  cx={80 + i * 30}
+                  cy={220 - (i % 2) * 30}
+                  r="3"
+                  fill="rgba(255, 215, 0, 0.8)"
                   className="animate-ping"
                   style={{ animationDelay: `${i * 300}ms` }}
                 />
@@ -93,48 +119,9 @@ const ReferralBanner = () => {
             </svg>
           </div>
         </div>
-
-        {/* Background Decorative Elements */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute -top-32 right-0 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob" />
-          <div className="absolute -bottom-32 left-0 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000" />
-          <div className="absolute top-0 left-1/2 w-96 h-96 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000" />
-        </div>
       </div>
     </div>
   );
 };
-
-// Add animation keyframes
-const style = document.createElement('style');
-style.textContent = `
-  @keyframes blob {
-    0% {
-      transform: translate(0px, 0px) scale(1);
-    }
-    33% {
-      transform: translate(30px, -50px) scale(1.1);
-    }
-    66% {
-      transform: translate(-20px, 20px) scale(0.9);
-    }
-    100% {
-      transform: translate(0px, 0px) scale(1);
-    }
-  }
-
-  .animate-blob {
-    animation: blob 7s infinite;
-  }
-
-  .animation-delay-2000 {
-    animation-delay: 2s;
-  }
-
-  .animation-delay-4000 {
-    animation-delay: 4s;
-  }
-`;
-document.head.appendChild(style);
 
 export default ReferralBanner;

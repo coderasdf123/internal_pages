@@ -1,128 +1,199 @@
-import React from 'react';
-import { 
-  BookOpen, 
-  Video, 
-  Users, 
-  Star, 
-  Clock, 
-  ChevronRight,
-  BookCheck,
-  FileText,
-  Globe
-} from 'lucide-react';
+import React, { useState } from "react";
+import { Star, Calendar, Book, Phone, CheckCircle, PlayCircle,Heart } from "lucide-react";
+import instructorImage from "../../assets/instructorImage.jpg";
+import instructorImage2 from "../../assets/instructorImage2.jpg";
+import instructorImage3 from "../../assets/instructorImage3.jpg";
+import instructorImage4 from "../../assets/instructorImage4.jpg";
+import lrn1 from "../../assets/lrn1.jpeg";
+import lrn2 from "../../assets/lrn2.jpeg";
+import lrn3 from "../../assets/lrn3.jpeg";
 
 const JEEPromoSection = () => {
-  // Sample avatar images using placeholder API
-  const avatars = [1, 2, 3, 4];
-  
+  // State for selected class
+  const [selectedClass, setSelectedClass] = useState("Class 11");
+
+  // Data for each class
+  const classData = {
+    "Class 11": {
+      title: "Class 11 JEE Preparation",
+      description:
+        "Comprehensive courses covering Physics, Chemistry, and Mathematics for JEE Main and Advanced.",
+      features: [
+        "Full syllabus completion for Class 11 topics",
+        "Live and recorded classes for foundational learning",
+        "Top educators guiding you through basics and advanced topics",
+      ],
+      image: instructorImage,
+    },
+    "Class 12": {
+      title: "Class 12 JEE Preparation",
+      description:
+        "Advanced preparation for JEE with in-depth coverage of Class 12 topics and practice tests.",
+      features: [
+        "In-depth coverage of Class 12 concepts",
+        "Problem-solving practice with live examples",
+        "Focused preparation for JEE Main and Advanced",
+      ],
+      image: instructorImage2,
+    },
+    "Dropper": {
+      title: "Dropper Batch for JEE",
+      description:
+        "Specialized courses for droppers focusing on improving problem-solving skills and completing the syllabus.",
+      features: [
+        "Focused coaching for dropper students",
+        "Advanced topic mastery and problem-solving",
+        "Complete syllabus completion within the year",
+      ],
+      image: instructorImage3,
+    },
+    "Customized Learning": {
+      title: "Customized Learning for JEE",
+      description:
+        "Flexible learning paths tailored to individual needs, focusing on weak areas and revision.",
+      features: [
+        "Personalized course plans and test series",
+        "Targeted doubt-clearing sessions",
+        "Flexible learning schedules",
+      ],
+      image: instructorImage4,
+    },
+  };
+
   return (
-    <div className="w-full bg-white py-16 px-8">
-      <div className="max-w-6xl mx-auto">
-        {/* Header Section */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-8">
-            Crack IIT JEE with our full-syllabus batches
-          </h1>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-            <div className="flex items-center justify-center space-x-3">
-              <BookOpen className="w-8 h-8 text-blue-600" />
-              <span className="text-lg">Best for full syllabus preparation</span>
-            </div>
-            <div className="flex items-center justify-center space-x-3">
-              <Video className="w-8 h-8 text-blue-600" />
-              <span className="text-lg">Live & recorded online classes</span>
-            </div>
-            <div className="flex items-center justify-center space-x-3">
-              <Star className="w-8 h-8 text-blue-600" />
-              <span className="text-lg">Curated by best educators</span>
-            </div>
+    <div className="w-full bg-[#E6F2EC] py-6">
+      <div className="max-w-6xl mx-auto p-6 font-sans-serif">
+        {/* Main Heading */}
+        <h1 className="text-3xl text-gray-800 font-semibold mb-6">
+          Crack IIT-JEE with our full syllabus batches
+        </h1>
+
+        {/* Features Section */}
+        <div className="flex justify-start space-x-8 mb-8">
+          <div className="flex items-center gap-3 text-gray-700" style={{ fontStyle: "normal", fontSize: "13px", lineHeight: "12px", fontWeight: 400 }}>
+            <CheckCircle className="w-5 h-5 text-green-600" />
+            <span>Best for full syllabus preparation</span>
+          </div>
+          <div className="flex items-center gap-3 text-gray-700 " style={{ fontStyle: "normal", fontSize: "13px", lineHeight: "12px", fontWeight: 400 }}>
+            <CheckCircle className="w-5 h-5 text-green-600" />
+            <span>Live & recorded online classes</span>
+          </div>
+          <div className="flex items-center gap-3 text-gray-700" style={{ fontStyle: "normal", fontSize: "13px", lineHeight: "12px", fontWeight: 400 }}>
+            <CheckCircle className="w-5 h-5 text-green-600" />
+            <span>Curated by best educators</span>
           </div>
         </div>
 
-        {/* Learner Activity Section */}
-        <div className="flex items-center justify-center mb-12">
-          <div className="flex items-center space-x-4">
-            <div className="flex -space-x-3">
-              {avatars.map((id) => (
-                <div key={id} className="w-10 h-10 rounded-full border-2 border-white overflow-hidden">
-                  <img 
-                    src={`/api/placeholder/40/40`}
-                    alt="Learner avatar"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              ))}
-            </div>
-            <div className="flex items-center space-x-2">
-              <Users className="w-5 h-5 text-blue-600" />
-              <span className="text-lg font-medium">1.7K learners explored a batch today</span>
-            </div>
+        {/* Learners and Class Options */}
+        <div className="flex flex-wrap justify-between items-center mb-8 gap-4">
+          {/* Class Buttons */}
+          <div className="flex flex-wrap gap-4">
+            {["Class 11", "Class 12", "Dropper", "Customized Learning"].map(
+              (label, i) => (
+                <button
+                  key={i}
+                  className={`px-4 py-2 rounded-full text-sm transition ${
+                    selectedClass === label
+                      ? "bg-emerald-500 text-white"
+                      : "bg-gray-200 hover:bg-gray-300"
+                  }`}
+                  onClick={() => setSelectedClass(label)}
+                >
+                  {label}
+                </button>
+              )
+            )}
           </div>
-        </div>
 
-        {/* Recommended Batch Card */}
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-xl font-semibold mb-4">Recommended batch for you</h2>
-          
-          <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-            {/* Batch Header */}
-            <div className="relative h-48 bg-gray-100">
-              <img 
-                src="/api/placeholder/800/300"
-                alt="Batch educators"
-                className="w-full h-full object-cover"
+          {/* Learners */}
+          <div className="flex items-center gap-2 text-gray-600 ml-auto">
+            <div className="flex -space-x-2">
+              <img
+                src={lrn1}
+                alt="Learner 1"
+                className="w-8 h-8 rounded-full border-2 border-white object-cover"
               />
-              <div className="absolute top-4 left-4 flex space-x-2">
-                <span className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-medium">
-                  Hinglish
-                </span>
-                <span className="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm font-medium">
-                  Full syllabus
-                </span>
+              <img
+                src={lrn2}
+                alt="Learner 2"
+                className="w-8 h-8 rounded-full border-2 border-white object-cover"
+              />
+              <img
+                src={lrn3}
+                alt="Learner 3"
+                className="w-8 h-8 rounded-full border-2 border-white object-cover"
+              />
+            </div>
+            <span className="text-sm">15 Lakh learners explored a batch today</span>
+          </div>
+        </div>
+
+        {/* Recommended Batch Section */}
+        <div className="bg-white rounded-lg shadow-md p-4">
+          <div className="flex flex-col md:flex-row gap-6">
+            {/* Image Section */}
+            <div className="md:w-3/5 relative flex flex-col justify-between">
+              <img
+                src={classData[selectedClass].image}
+                alt={`Instructor for ${selectedClass}`}
+                className="w-full h-78 object-cover rounded-lg"
+              />
+              <button className="absolute inset-0 flex items-center justify-center">
+                <PlayCircle className="w-12 h-12 text-white bg-black bg-opacity-50 rounded-full" />
+              </button>
+              <div className="absolute top-4 left-4 flex gap-2">
+                <span className="bg-white px-3 py-1 rounded-full text-sm">Hinglish</span>
+                <span className="bg-white px-3 py-1 rounded-full text-sm">Full syllabus</span>
               </div>
             </div>
 
-            {/* Batch Content */}
-            <div className="p-6">
-              <h3 className="text-2xl font-bold mb-4">
-                Aarambh Batch for JEE Main and Advanced 2026
+            {/* Content Section */}
+            <div className="md:w-3/5 flex flex-col justify-between">
+              {/* Recommended Badge */}
+              <div className="flex items-center gap-2 mb-2">
+                <div className="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm flex items-center gap-1">
+                  <Star className="w-4 h-4" />
+                  Recommended
+                </div>
+                {/* Ratings */}
+                <div className="text-purple-600 text-sm">Top rated • Exceptional educators</div>
+              </div>
+
+              {/* Title */}
+              <h3 className="text-xl text-gray-800 font-medium mb-4">
+                {classData[selectedClass].title}
               </h3>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                <div className="flex items-start space-x-3">
-                  <BookCheck className="w-6 h-6 text-blue-600 flex-shrink-0" />
-                  <span>Full IIT JEE syllabus completion</span>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <FileText className="w-6 h-6 text-blue-600 flex-shrink-0" />
-                  <span>Topic-wise full syllabus notes</span>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <Globe className="w-6 h-6 text-blue-600 flex-shrink-0" />
-                  <span>Live doubt solving sessions</span>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <Video className="w-6 h-6 text-blue-600 flex-shrink-0" />
-                  <span>Recorded video lectures</span>
-                </div>
+              {/* Description */}
+              <p className="text-gray-600 text-sm mb-4">
+                {classData[selectedClass].description}
+              </p>
+
+              {/* Features */}
+              <div className="space-y-3 mb-6">
+                {classData[selectedClass].features.map((feature, index) => (
+                  <div key={index} className="flex items-center gap-2 text-gray-700">
+                    <Book className="w-5 h-5" />
+                    <span className="text-sm">{feature}</span>
+                  </div>
+                ))}
               </div>
 
-              <div className="flex items-center justify-between border-t pt-6">
+              {/* Bottom Section */}
+              <div className="flex items-center justify-between ">
                 <div>
-                  <p className="text-gray-600">Lead Educator</p>
-                  <p className="font-semibold text-lg">Vineet Loomba</p>
+                  <div className="flex items-center gap-2">
+                    <Calendar className="w-5 h-5 text-gray-600" />
+                    <span className="font-medium">Starts in 27 days</span>
+                  </div>
                 </div>
 
-                <div className="flex items-center space-x-4">
-                  <div className="text-right">
-                    <Clock className="inline-block w-4 h-4 text-orange-500 mr-1" />
-                    <span className="text-orange-500">Starts in 30 days</span>
-                  </div>
-                  
-                  <button className="bg-blue-600 text-white px-6 py-3 rounded-lg flex items-center space-x-2 hover:bg-blue-700 transition-colors">
-                    <span>View batch details</span>
-                    <ChevronRight className="w-4 h-4" />
+                <div className="flex gap-4">
+                  <button className="bg-gray-700 text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors text-sm">
+                    View batch details
+                  </button>
+                  <button className="bg-gray-200 p-3 rounded-full hover:bg-gray-300 transition-colors">
+                    <Phone className="w-5 h-5" />
                   </button>
                 </div>
               </div>

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Phone, Mail, Download, Smartphone, Book, Users, Clock, Play } from 'lucide-react';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGooglePlay, faAppStore } from '@fortawesome/free-brands-svg-icons';
+import phone from "../../assets/phone.png";
 const EducationPlatform = () => {
   return (
     <div className="w-full">
@@ -12,7 +14,7 @@ const EducationPlatform = () => {
             <h1 className="text-4xl font-bold mb-8">
               Online preparation like never before
             </h1>
-            
+
             {/* Features List */}
             <div className="space-y-6">
               <div className="flex items-center space-x-4">
@@ -32,57 +34,15 @@ const EducationPlatform = () => {
                 <span className="text-lg">Doubt solving</span>
               </div>
             </div>
-
-            {/* Download Buttons */}
-            <div className="mt-8 flex space-x-4">
-              <button className="bg-black text-white px-6 py-3 rounded-lg flex items-center space-x-2">
-                <Download className="w-5 h-5" />
-                <span>App Store</span>
-              </button>
-              <button className="bg-black text-white px-6 py-3 rounded-lg flex items-center space-x-2">
-                <Download className="w-5 h-5" />
-                <span>Google Play</span>
-              </button>
-            </div>
           </div>
 
-          {/* Right Content - Phone Mockups */}
-          <div className="relative h-[600px]">
-            {/* First Phone */}
-            <div className="absolute right-0 top-0 w-64 h-[500px] bg-white rounded-3xl shadow-xl p-4">
-              <div className="w-full h-full bg-gray-100 rounded-2xl p-4">
-                <h3 className="text-lg font-semibold mb-4">Dashboard</h3>
-                <div className="space-y-4">
-                  <div className="bg-white p-3 rounded-lg">
-                    <p className="text-sm text-gray-600">Today's Schedule</p>
-                    <p className="font-medium">Physics Live Class - 4:00 PM</p>
-                  </div>
-                  <div className="bg-white p-3 rounded-lg">
-                    <p className="text-sm text-gray-600">Progress</p>
-                    <div className="w-full bg-gray-200 h-2 rounded-full mt-2">
-                      <div className="w-3/4 bg-blue-600 h-2 rounded-full"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Second Phone */}
-            <div className="absolute left-0 top-20 w-64 h-[500px] bg-white rounded-3xl shadow-xl p-4">
-              <div className="w-full h-full bg-gray-100 rounded-2xl p-4">
-                <h3 className="text-lg font-semibold mb-4">Profile</h3>
-                <div className="space-y-4">
-                  <div className="bg-white p-3 rounded-lg">
-                    <p className="text-sm text-gray-600">Watch Minutes</p>
-                    <p className="font-medium">1,234 minutes</p>
-                  </div>
-                  <div className="bg-white p-3 rounded-lg">
-                    <p className="text-sm text-gray-600">Courses</p>
-                    <p className="font-medium">5 Active Courses</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+          {/* Right Content - Image */}
+          <div className="relative h-[600px] flex justify-center items-center">
+            <img
+              src={phone}
+              alt="Phone Mockup"
+              className="w-[300px] h-auto rounded-xl shadow-xl"
+            />
           </div>
         </div>
       </section>
@@ -99,11 +59,16 @@ const EducationPlatform = () => {
                 Democratizing education and making it accessible to all
               </p>
               <div className="flex space-x-4">
-                <button className="bg-white text-black px-4 py-2 rounded-lg text-sm">
-                  App Store
+                {/* Google Play Button */}
+                <button className="bg-white text-black px-4 py-2 rounded-lg text-sm flex items-center space-x-2">
+                  <FontAwesomeIcon icon={faGooglePlay} className="w-6 h-6" />
+                  <span>Google Play</span>
                 </button>
-                <button className="bg-white text-black px-4 py-2 rounded-lg text-sm">
-                  Google Play
+
+                {/* Apple App Store Button */}
+                <button className="bg-white text-black px-4 py-2 rounded-lg text-sm flex items-center space-x-2">
+                  <FontAwesomeIcon icon={faAppStore} className="w-6 h-6" />
+                  <span>App Store</span>
                 </button>
               </div>
             </div>
