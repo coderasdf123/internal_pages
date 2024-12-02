@@ -161,7 +161,7 @@ const VideoClassesShowcase = () => {
         {/* Previous Button */}
         <button
           onClick={handlePrevious}
-          className="absolute -left-2 z-4 p-2 bg-white rounded-full shadow-lg hover:bg-gray-50 transition-colors"
+          className="absolute -left-2 z-10 flex justify-between p-2 bg-white rounded-full shadow-lg hover:bg-gray-50 transition-colors"
         >
           <ChevronLeft className="w-6 h-6 text-gray-600" />
         </button>
@@ -178,7 +178,7 @@ const VideoClassesShowcase = () => {
         {/* Next Button */}
         <button
           onClick={handleNext}
-          className="absolute -right-2 z-4 p-2 bg-white rounded-full shadow-lg hover:bg-gray-50 transition-colors"
+          className="absolute -right-2 z-10 p-2 bg-white rounded-full shadow-lg hover:bg-gray-50 transition-colors"
         >
           <ChevronRight className="w-6 h-6 text-gray-600" />
         </button>

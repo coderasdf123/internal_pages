@@ -22,10 +22,11 @@ const NavbarMenu = [
   },
 ];
 
+
+
 const Navbar = () => {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [isScrolled, setIsScrolled] = useState(false);
-
   const toggleDropdown = (menuId) => {
     setOpenDropdown(openDropdown === menuId ? null : menuId);
   };
@@ -43,14 +44,11 @@ const Navbar = () => {
 
   return (
     <>
-      <br />
-      <br />
-      <br />
       <div className="relative">
         <nav
-          className={`fixed top-0 w-full z-20 transition-all duration-300 ${
-            isScrolled ? 'bg-white/70 shadow-lg backdrop-blur-md' : 'bg-transparent'
-          }`}
+          className={`fixed top-0 w-full z-20 transition-all duration-300 
+            ${isScrolled ? 'bg-white/70 shadow-lg backdrop-blur-md' : 'bg-transparent'}`}
+          
         >
           <motion.div
             initial={{ opacity: 0, y: -50 }}
@@ -131,14 +129,16 @@ const Navbar = () => {
       </div>
 
       {/* NavigationTabs Component */}
-      <NavigationTabs />
+      <NavigationTabs isScrolled={isScrolled} />
     </>
   );
 };
 
-const NavigationTabs = () => {
+const NavigationTabs = (isScrolled) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [activeTab, setActiveTab] = useState(null);
+
+
 
   const handleTabClick = (tab) => {
     if (tab === 'dropdown') {
@@ -172,9 +172,12 @@ const NavigationTabs = () => {
   }, []);
 
   return (
+
     <div>
       {/* Navigation Bar */}
-      <nav className="fixed top-[56px] left-0 w-full z-20 bg-white/70 shadow-lg backdrop-blur-lg">
+      <nav className={`fixed mt-4 top-[56px] left-0 w-full z-20 ${
+    isScrolled ? 'bg-white/70 shadow-lg backdrop-blur-md' : 'bg-transparent' }`}
+   >
         <div className="flex justify-start items-center space-x-3 py-2 max-w-7xl mx-auto pl-[2.15cm] relative">
           {/* Dropdown Menu */}
           <div className="relative">

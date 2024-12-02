@@ -63,16 +63,16 @@ const ReferralBanner = () => {
               {/* Decorative Elements */}
               <g transform="translate(160, 120)">
                 <rect
-                  x="-4"
-                  y="30"
-                  width="80"
-                  height="40"
+                  x="-1"
+                  y="45"
+                  width="75"
+                  height="30"
                   rx="8"
                   fill="rgba(255, 215, 0, 0.8)"
                 />
                 <text
                   x="38"
-                  y="55"
+                  y="68"
                   fontSize="16"
                   fontWeight="bold"
                   fill="rgba(75, 63, 47, 0.8)"

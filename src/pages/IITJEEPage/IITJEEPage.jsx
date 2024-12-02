@@ -7,7 +7,7 @@ import VideoClassesShowcase from "../../components/VideoClassesShowcase/VideoCla
 import InteractiveEducationalPlatform from "../../components/InteractiveEducationalPlatform/InteractiveEducationalPlatform";
 import JEEPromoSection from "../../components/JEEPromoSection/JEEPromoSection";
 import ReferralBanner from "../../components/ReferralBanner/ReferralBanner";
-import StickyCardComponent from '../../components/CourseCards/StickyCardComponent';
+//import StickyCardComponent from '../../components/CourseCards/StickyCardComponent';
 import ScholarshipBanner from '../../components/ScholarshipBanner/ScholarshipBanner.JSX';
 import JEEExamLandingPage from '../../components/JEEExamLandingPage/JEEExamLandingPage';
 import DelayedFormPopup from '../../components/DelayedFormPopup/DelayedFormPopup';
@@ -17,32 +17,29 @@ import Footer from '../../components/Footer/Footer';
 const IITJEEPage = () => {
   return (
     <div className="iit-jee-page">
-      {/*<NavigationTabs />*/}
-      {/* Page content */}
-      <section id="get-started" className="my-20">
+      <section id="get-started" className="my-4">
         <Bannerr />
-        {/*<Slider/>*/}
         <DelayedFormPopup/>
       </section>
-      <section id="features" className="my-20">
+      <section id="features" className="my-0">
       <FreeDemoComponent />
       </section>
-      <section id="batch" className="my-20">
+      <section id="batch" className="my-0">
         <JEEPromoSection />
       </section>
-      <section id="educators" className="my-20">
+      <section id="educators" className="my-0">
       <ScholarshipBanner/>
         <EducationFeatures/>
         <VideoClassesShowcase/>
         <InteractiveEducationalPlatform />
       </section>
-      <section id="success-stories" className="my-20">
+      <section id="success-stories" className="my-0">
         <ReferralBanner />
       </section>
-      <section id="about-exam" className="my-20">
+      <section id="about-exam" className="my-0">
         <JEEExamLandingPage />
       </section>
-      <StickyCardComponent />
+      {/*<StickyCardComponent />*/}
       <Footer />
     </div>
   );

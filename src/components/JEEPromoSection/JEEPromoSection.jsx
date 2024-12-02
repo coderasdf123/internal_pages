@@ -8,6 +8,7 @@ import lrn1 from "../../assets/lrn1.jpeg";
 import lrn2 from "../../assets/lrn2.jpeg";
 import lrn3 from "../../assets/lrn3.jpeg";
 
+
 const JEEPromoSection = () => {
   // State for selected class
   const [selectedClass, setSelectedClass] = useState("Class 11");
@@ -61,7 +62,7 @@ const JEEPromoSection = () => {
   };
 
   return (
-    <div className="w-full bg-[#E6F2EC] py-6">
+    <div className="w-full bg-[#E6F2EC] py-6 style={{ transform: 'scale(0.8)', transformOrigin: 'top left' }}">
       <div className="max-w-6xl mx-auto p-6 font-sans-serif">
         {/* Main Heading */}
         <h1 className="text-3xl text-gray-800 font-semibold mb-6">
@@ -88,22 +89,22 @@ const JEEPromoSection = () => {
         <div className="flex flex-wrap justify-between items-center mb-8 gap-4">
           {/* Class Buttons */}
           <div className="flex flex-wrap gap-4">
-            {["Class 11", "Class 12", "Dropper", "Customized Learning"].map(
-              (label, i) => (
-                <button
-                  key={i}
-                  className={`px-4 py-2 rounded-full text-sm transition ${
-                    selectedClass === label
-                      ? "bg-emerald-500 text-white"
-                      : "bg-gray-200 hover:bg-gray-300"
-                  }`}
-                  onClick={() => setSelectedClass(label)}
-                >
-                  {label}
-                </button>
-              )
-            )}
-          </div>
+  {["Class 11", "Class 12", "Dropper", "Customized Learning"].map(
+    (label, i) => (
+      <button
+        key={i}
+        className={`btn ${
+          selectedClass === label
+            ? "bg-emerald-500 text-white"
+            : "bg-gray-200 hover:bg-gray-300"
+        }`}
+        onClick={() => setSelectedClass(label)}
+      >
+        {label}
+      </button>
+    )
+  )}
+</div>
 
           {/* Learners */}
           <div className="flex items-center gap-2 text-gray-600 ml-auto">
